@@ -36,6 +36,7 @@ opt.ruler = false
 opt.scrolloff = 4
 opt.smartindent = true
 opt.smartcase = true
+opt.showmode = false
 opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 2
