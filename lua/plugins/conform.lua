@@ -9,6 +9,7 @@ return {
 				javascript = { "prettier" },
 				html = { "prettier" },
 				css = { "prettier" },
+				blade = { "blade" },
 				vue = { "prettier" },
 			},
 			format_on_save = {

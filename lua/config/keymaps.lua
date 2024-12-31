@@ -1,7 +1,7 @@
 local key = vim.keymap
 
 -- save file
-key.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+key.set({ "i", "x", "n", "s" }, "<leader>s", "<cmd>w<cr><esc>", { desc = "Save File" })
 -- new file
 key.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 

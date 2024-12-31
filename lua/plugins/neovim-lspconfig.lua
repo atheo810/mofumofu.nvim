@@ -4,10 +4,15 @@ return {
 		local lspconfig = require("lspconfig")
 		lspconfig.lua_ls.setup({
 			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			filetype = { "lua" },
+			log_level = 2,
+			settings = {
+				Lua = {},
+			},
 		})
 		lspconfig.volar.setup({
 			capabilities = require("cmp_nvim_lsp").default_capabilities(),
-			filetype = { "typescript", "javascript", "javascriptreat", "typescriptreact", "vue" },
+			filetype = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 			init_options = {
 				vue = {
 					hybridMode = false,
