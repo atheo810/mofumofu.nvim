@@ -16,6 +16,21 @@ return {
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
+			lualine_c = {
+				{
+					"diagnostics",
+					sources = { "nvim_diagnostic" }, -- Mengambil info dari LSP
+					sections = { "error", "warn", "info", "hint" },
+					symbols = {
+						error = " ",
+						warn = " ",
+						info = " ",
+						hint = " ",
+					},
+					colored = true, -- Warnai berdasarkan level
+					update_in_insert = false, -- Perbarui saat di luar mode insert
+				},
+			},
 		},
 		globalstatus = false,
 		refresh = {

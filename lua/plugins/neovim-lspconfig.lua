@@ -7,7 +7,15 @@ return {
 			filetype = { "lua" },
 			log_level = 2,
 			settings = {
-				Lua = {},
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+						globals = { "vim" },
+					},
+					diagnostics = {
+						globals = { "vim" },
+					},
+				},
 			},
 		})
 		lspconfig.volar.setup({
