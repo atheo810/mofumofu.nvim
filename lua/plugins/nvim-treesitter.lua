@@ -1,11 +1,10 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	version = false,
-	indent = {
-		enable = true,
-	},
-	autotag = {
-		enable = true,
-	},
-	ensure_installed = { "lua", "html", "css", "vue", "javascript", "json", "php" },
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = { "vue", "javascript", "typescript", "html", "css", "lua" },
+			highlight = { enable = true },
+		})
+	end,
 }

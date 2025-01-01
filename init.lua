@@ -25,5 +25,9 @@ vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tre
 vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
 vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float, { desc = "Show Diagnostic Info" })
+-- Find references using Telescope
+vim.keymap.set("n", "<leader>gr", function()
+	require("telescope.builtin").lsp_references()
+end, { desc = "Telescope Go to References" })
 
 require("config.keymaps")
