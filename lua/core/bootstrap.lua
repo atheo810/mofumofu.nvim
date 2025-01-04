@@ -54,11 +54,18 @@ require("lazy").setup({
                             hybridMode = false,
                         },
                     },
+                    settings = {
+                        typescript = {
+                            inlayHints = {
+                                includeInlayParameterHints = "all",
+                                includeInlayFunctionParameterTypes = true,
+                                includeInlayVariableTypes = true,
+                                includeInlayPropertyDeclarationTypes = true,
+                                includeInlayFunctionLikeReturnType = true,
+                            }
+                        }
+                    },
                 })
-
-                -- setting for each formatter
-                lspconfig.lua_ls.setup {}
-
 
             end,
         },
@@ -195,16 +202,20 @@ require("lazy").setup({
 		{  
 			"folke/which-key.nvim",
 			event = "VeryLazy",
-		
+            config = function()
+                local wk = require("which-key")
+                wk.setup {}
+                local keymaps = require("core.keymaps")
+            end,
 			keys = {
-			{
-				"<leader>?",
-				function()
-				require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
+                {
+                    "<leader>?",
+                    function()
+                    require("which-key").show({ global = false })
+                    end,
+                    desc = "Buffer Local Keymaps (which-key)",
+                },
 			},
-			}
 		},
 		{     
 			"kdheepak/lazygit.nvim",
