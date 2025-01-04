@@ -1,5 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocaleader = "\\"
+vim.g.have_nerd_font = true
+vim.cmd [[colorscheme catppuccin-mocha]]
+
+vim.o.wildmode = "longest:full,full"
+vim.o.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
+vim.opt.timeoutlen = 200
 
 vim.g.autoformat = true
 
@@ -12,16 +18,16 @@ vim.g.trouble_lualine = true
 local opt = vim.opt
 
 opt.autowrite = true
-opt.confirm  = true
+opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
 }
 opt.foldlevel = 99
 opt.ignorecase = true
@@ -42,4 +48,3 @@ opt.splitright = true
 opt.tabstop = 2
 opt.termguicolors = true
 opt.winminwidth = 5
-

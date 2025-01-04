@@ -1,7 +1,5 @@
-return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	opts = {
+require("lualine").setup({
+	options = {
 		icon_enabled = true,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
@@ -38,5 +36,5 @@ return {
 			tabline = 1000,
 			winbar = 1000,
 		},
-	},
-}
+	}
+})
