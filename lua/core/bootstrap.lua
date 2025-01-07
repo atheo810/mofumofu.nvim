@@ -24,6 +24,12 @@ vim.g.maplocalleader = " "
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
+        {
+            "numToStr/Comment.nvim",
+            config = function()
+                require("Comment").setup()
+            end,
+        },
         { "neovim/nvim-lspconfig",
             config = function()
                 local lspconfig = require("lspconfig")
@@ -120,18 +126,18 @@ require("lazy").setup({
         },
 		{
             "nvim-treesitter/nvim-treesitter",
-            build = ":TSUpdate", -- Penting untuk mengkompilasi parser
-            config = function() -- Ini penting
+            build = ":TSUpdate", 
+            config = function() 
                 require("nvim-treesitter.configs").setup {
-                    -- Konfigurasi nvim-treesitter Anda di sini
+                    lookahead = true,
+                    enable = true,
                     ensure_installed = { "c", "cpp", "lua", "vim", "javascript", "typescript", "html", "css", "json", "python" },
                     highlight = { enable = true },
                     indent = { enable = true },
                     autopairs = { enable = true },
                     fold = { enable = true },
-                    -- ... opsi lainnya
                 }
-            end, -- Akhir dari fungsi config
+            end, 
         },
 		{ "akinsho/toggleterm.nvim", config = true },
 		{
